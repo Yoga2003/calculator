@@ -1,43 +1,73 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CalculatorConsoleApp
+public class Program
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.Title = "Apikasi Kalkulator";
+	private double tambah (double a, double b){
+ 	
+	return ( a + b );
+	}
+	
+	private double kurang (double a, double b ){
+	return ( a - b );
+	}
+	
+	private double kali (double a, double b ){
+	return ( a * b );
+	}
+	
+	private double bagi (double a, double b ){
+	return (a / b );
+	}
+	
+	public void Main()
+	{
+		
+		double bil1, bil2;
+		char pilihan;
+		Console.WriteLine("Pilih Menu Calculator: ");
+		Console.WriteLine("1. Penambahan");
+		Console.WriteLine("2. Pengurangan");
+		Console.WriteLine("3. Perkalian");
+		Console.WriteLine("4. Pembagian");
+		Console.WriteLine("Pilih nomor 1-4");
+		pilihan = Convert.ToChar(Console.ReadLine());
+		Console.WriteLine("\n");
 
-            int a = 7;
-            int b = 3;
 
-            Console.WriteLine("Hasil penambahan" + a +" + "+ b +" = "+ Penambahan(a,b));
-            Console.WriteLine("Hasil pengurangan {0} - {1} = {2}",a ,b, Pengurangan(a,b));
-            Console.WriteLine("Hasil perkalian {0} * {1} = {2}",a ,b, Perkalian(a,b));
-            Console.WriteLine("Hasil pembagian {0} / {1} = {2}",a ,b, Pembagian(a,b));
-
-            Console.WriteLine("\n Tekan sembarang tombol untuk keluar");
-            Console.ReadKey();
-        }
-        static int Penambahan(int a,int b)
-        {
-            return a + b;
-        }
-        static int Pengurangan(int a, int b)
-        {
-            return a - b;
-        }
-        static int Perkalian( int a, int b)
-        {
-            return a * b;
-        }
-        static int Pembagian(int a, int b)
-        {
-            return a / b;
-        } 
-    }
+		if ( pilihan == '1') {
+			Console.WriteLine("Inputkan Nilai");
+			Console.WriteLine("Inputkan Nilai a : ");
+			bil1 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Inputkan Nilai b : ");
+			bil2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Hasilnya Penambahan : "+tambah(bil1,bil2));	
+		}
+		
+		else if ( pilihan == '2') {
+			Console.WriteLine("Inputkan Nilai");
+			Console.WriteLine("Inputkan Nilai a");
+			bil1 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Inputkan Nilai b");
+			bil2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Hasil perkalian : "+kurang(bil1,bil2));
+		}
+		
+		else if ( pilihan == '3') {
+			Console.WriteLine("Inputkan Nilai");
+			Console.WriteLine("Inputkan Nilai a");
+			bil1 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Inputkan Nilai b");
+			bil2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Hasilnya Pembagian: "+kali(bil1,bil2));	
+		}
+		
+		else if ( pilihan == '4') {
+			Console.WriteLine("Inputkan Nilai");
+			Console.WriteLine("Inputkan Nilai a");
+			bil1 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Inputkan Nilai b");
+			bil2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Hasil Pembagian: "+bagi(bil1,bil2));
+		}
+	}
 }
